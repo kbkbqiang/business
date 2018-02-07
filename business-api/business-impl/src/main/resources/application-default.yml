@@ -1,0 +1,21 @@
+# note: 该配置文件仅用于开发环境
+
+spring:
+  datasource:
+    url : "jdbc:mysql://192.168.18.107:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
+    username : niiwoowrite
+    password : niiwoo@write@123
+    driverClassName : com.mysql.jdbc.Driver
+
+#spring:
+#  redis:
+#    host: 192.168.18.103
+#    port: 6379
+#    password: ace@redis99
+#    database: 9
+#    timeout: 10000
+#    pool:
+#      max-active: 10
+#      max-idle: 5
+#      min-idle: 2
+#      max-wait: 2000

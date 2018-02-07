@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backend.business.dao.mapper.prize.UserPrizeStatisticsMapper">
+  <resultMap id="BaseResultMap" type="com.backend.business.dao.entity.prize.UserPrizeStatistics">
+    <id column="userId" jdbcType="VARCHAR" property="userId" />
+    <result column="withdrawRedAmount" jdbcType="DECIMAL" property="withdrawRedAmount" />
+    <result column="usedWithdrawRedAmount" jdbcType="DECIMAL" property="usedWithdrawRedAmount" />
+    <result column="guaranteeVouchersAmount" jdbcType="DECIMAL" property="guaranteeVouchersAmount" />
+    <result column="usedGuaranteeVouchersAmount" jdbcType="DECIMAL" property="usedGuaranteeVouchersAmount" />
+    <result column="guaranteeInvestmentVouchersAmount" jdbcType="DECIMAL" property="guaranteeInvestmentVouchersAmount" />
+    <result column="usedGuaranteeInvestmentVouchersAmount" jdbcType="DECIMAL" property="usedGuaranteeInvestmentVouchersAmount" />
+    <result column="investmentVouchersAmount" jdbcType="DECIMAL" property="investmentVouchersAmount" />
+    <result column="usedInvestmentVouchersAmount" jdbcType="DECIMAL" property="usedInvestmentVouchersAmount" />
+    <result column="cashRedAmount" jdbcType="DECIMAL" property="cashRedAmount" />
+    <result column="usedCashRedAmount" jdbcType="DECIMAL" property="usedCashRedAmount" />
+    <result column="guaranteeExperienceAmount" jdbcType="DECIMAL" property="guaranteeExperienceAmount" />
+    <result column="usedGuaranteeExperienceAmount" jdbcType="DECIMAL" property="usedGuaranteeExperienceAmount" />
+    <result column="guaranteeExperienceProfit" jdbcType="DECIMAL" property="guaranteeExperienceProfit" />
+    <result column="guaranteeInvestmentExperienceAmount" jdbcType="DECIMAL" property="guaranteeInvestmentExperienceAmount" />
+    <result column="usedGuaranteeInvestmentExperienceAmount" jdbcType="DECIMAL" property="usedGuaranteeInvestmentExperienceAmount" />
+    <result column="investmentExperienceAmount" jdbcType="DECIMAL" property="investmentExperienceAmount" />
+    <result column="usedInvestmentExperienceAmount" jdbcType="DECIMAL" property="usedInvestmentExperienceAmount" />
+    <result column="investmentExperienceProfit" jdbcType="DECIMAL" property="investmentExperienceProfit" />
+    <result column="investmentRaiseCount" jdbcType="INTEGER" property="investmentRaiseCount" />
+    <result column="usedInvestmentRaiseCount" jdbcType="INTEGER" property="usedInvestmentRaiseCount" />
+    <result column="investmentRaiseProfit" jdbcType="DECIMAL" property="investmentRaiseProfit" />
+    <result column="investmentCashbackAmount" jdbcType="DECIMAL" property="investmentCashbackAmount" />
+    <result column="usedInvestmentCashbackAmount" jdbcType="DECIMAL" property="usedInvestmentCashbackAmount" />
+    <result column="guaranteeCashbackAmount" jdbcType="DECIMAL" property="guaranteeCashbackAmount" />
+    <result column="usedGuaranteeCashbackAmount" jdbcType="DECIMAL" property="usedGuaranteeCashbackAmount" />
+    <result column="loanCashbackAmount" jdbcType="DECIMAL" property="loanCashbackAmount" />
+    <result column="usedLoanCashbackAmount" jdbcType="DECIMAL" property="usedLoanCashbackAmount" />
+    <result column="borrowInterestRateCount" jdbcType="INTEGER" property="borrowInterestRateCount" />
+    <result column="usedBorrowInterestRateCount" jdbcType="INTEGER" property="usedBorrowInterestRateCount" />
+    <result column="borrowInterestRateProfit" jdbcType="DECIMAL" property="borrowInterestRateProfit" />
+    <result column="personReceivedRedAmount" jdbcType="DECIMAL" property="personReceivedRedAmount" />
+    <result column="personSendRedAmount" jdbcType="DECIMAL" property="personSendRedAmount" />
+    <result column="groupReceivedAmount" jdbcType="DECIMAL" property="groupReceivedAmount" />
+    <result column="groupSendAmount" jdbcType="DECIMAL" property="groupSendAmount" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    userId, withdrawRedAmount, usedWithdrawRedAmount, guaranteeVouchersAmount, usedGuaranteeVouchersAmount, 
+    guaranteeInvestmentVouchersAmount, usedGuaranteeInvestmentVouchersAmount, investmentVouchersAmount, 
+    usedInvestmentVouchersAmount, cashRedAmount, usedCashRedAmount, guaranteeExperienceAmount, 
+    usedGuaranteeExperienceAmount, guaranteeExperienceProfit, guaranteeInvestmentExperienceAmount, 
+    usedGuaranteeInvestmentExperienceAmount, investmentExperienceAmount, usedInvestmentExperienceAmount, 
+    investmentExperienceProfit, investmentRaiseCount, usedInvestmentRaiseCount, investmentRaiseProfit, 
+    investmentCashbackAmount, usedInvestmentCashbackAmount, guaranteeCashbackAmount, 
+    usedGuaranteeCashbackAmount, loanCashbackAmount, usedLoanCashbackAmount, borrowInterestRateCount, 
+    usedBorrowInterestRateCount, borrowInterestRateProfit, personReceivedRedAmount, personSendRedAmount, 
+    groupReceivedAmount, groupSendAmount, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tab_userprizestatistics
+    where userId = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tab_userprizestatistics
+    where userId = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.backend.business.dao.entity.prize.UserPrizeStatistics">
+    insert into tab_userprizestatistics (userId, withdrawRedAmount, usedWithdrawRedAmount, 
+      guaranteeVouchersAmount, usedGuaranteeVouchersAmount, 
+      guaranteeInvestmentVouchersAmount, usedGuaranteeInvestmentVouchersAmount, 
+      investmentVouchersAmount, usedInvestmentVouchersAmount, 
+      cashRedAmount, usedCashRedAmount, guaranteeExperienceAmount, 
+      usedGuaranteeExperienceAmount, guaranteeExperienceProfit, 
+      guaranteeInvestmentExperienceAmount, usedGuaranteeInvestmentExperienceAmount, 
+      investmentExperienceAmount, usedInvestmentExperienceAmount, 
+      investmentExperienceProfit, investmentRaiseCount, 
+      usedInvestmentRaiseCount, investmentRaiseProfit, 
+      investmentCashbackAmount, usedInvestmentCashbackAmount, 
+      guaranteeCashbackAmount, usedGuaranteeCashbackAmount, 
+      loanCashbackAmount, usedLoanCashbackAmount, 
+      borrowInterestRateCount, usedBorrowInterestRateCount, 
+      borrowInterestRateProfit, personReceivedRedAmount, 
+      personSendRedAmount, groupReceivedAmount, 
+      groupSendAmount, updateTime)
+    values (#{userId,jdbcType=VARCHAR}, #{withdrawRedAmount,jdbcType=DECIMAL}, #{usedWithdrawRedAmount,jdbcType=DECIMAL}, 
+      #{guaranteeVouchersAmount,jdbcType=DECIMAL}, #{usedGuaranteeVouchersAmount,jdbcType=DECIMAL}, 
+      #{guaranteeInvestmentVouchersAmount,jdbcType=DECIMAL}, #{usedGuaranteeInvestmentVouchersAmount,jdbcType=DECIMAL}, 
+      #{investmentVouchersAmount,jdbcType=DECIMAL}, #{usedInvestmentVouchersAmount,jdbcType=DECIMAL}, 
+      #{cashRedAmount,jdbcType=DECIMAL}, #{usedCashRedAmount,jdbcType=DECIMAL}, #{guaranteeExperienceAmount,jdbcType=DECIMAL}, 
+      #{usedGuaranteeExperienceAmount,jdbcType=DECIMAL}, #{guaranteeExperienceProfit,jdbcType=DECIMAL}, 
+      #{guaranteeInvestmentExperienceAmount,jdbcType=DECIMAL}, #{usedGuaranteeInvestmentExperienceAmount,jdbcType=DECIMAL}, 
+      #{investmentExperienceAmount,jdbcType=DECIMAL}, #{usedInvestmentExperienceAmount,jdbcType=DECIMAL}, 
+      #{investmentExperienceProfit,jdbcType=DECIMAL}, #{investmentRaiseCount,jdbcType=INTEGER}, 
+      #{usedInvestmentRaiseCount,jdbcType=INTEGER}, #{investmentRaiseProfit,jdbcType=DECIMAL}, 
+      #{investmentCashbackAmount,jdbcType=DECIMAL}, #{usedInvestmentCashbackAmount,jdbcType=DECIMAL}, 
+      #{guaranteeCashbackAmount,jdbcType=DECIMAL}, #{usedGuaranteeCashbackAmount,jdbcType=DECIMAL}, 
+      #{loanCashbackAmount,jdbcType=DECIMAL}, #{usedLoanCashbackAmount,jdbcType=DECIMAL}, 
+      #{borrowInterestRateCount,jdbcType=INTEGER}, #{usedBorrowInterestRateCount,jdbcType=INTEGER}, 
+      #{borrowInterestRateProfit,jdbcType=DECIMAL}, #{personReceivedRedAmount,jdbcType=DECIMAL}, 
+      #{personSendRedAmount,jdbcType=DECIMAL}, #{groupReceivedAmount,jdbcType=DECIMAL}, 
+      #{groupSendAmount,jdbcType=DECIMAL}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.backend.business.dao.entity.prize.UserPrizeStatistics">
+    insert into tab_userprizestatistics
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        userId,
+      </if>
+      <if test="withdrawRedAmount != null">
+        withdrawRedAmount,
+      </if>
+      <if test="usedWithdrawRedAmount != null">
+        usedWithdrawRedAmount,
+      </if>
+      <if test="guaranteeVouchersAmount != null">
+        guaranteeVouchersAmount,
+      </if>
+      <if test="usedGuaranteeVouchersAmount != null">
+        usedGuaranteeVouchersAmount,
+      </if>
+      <if test="guaranteeInvestmentVouchersAmount != null">
+        guaranteeInvestmentVouchersAmount,
+      </if>
+      <if test="usedGuaranteeInvestmentVouchersAmount != null">
+        usedGuaranteeInvestmentVouchersAmount,
+      </if>
+      <if test="investmentVouchersAmount != null">
+        investmentVouchersAmount,
+      </if>
+      <if test="usedInvestmentVouchersAmount != null">
+        usedInvestmentVouchersAmount,
+      </if>
+      <if test="cashRedAmount != null">
+        cashRedAmount,
+      </if>
+      <if test="usedCashRedAmount != null">
+        usedCashRedAmount,
+      </if>
+      <if test="guaranteeExperienceAmount != null">
+        guaranteeExperienceAmount,
+      </if>
+      <if test="usedGuaranteeExperienceAmount != null">
+        usedGuaranteeExperienceAmount,
+      </if>
+      <if test="guaranteeExperienceProfit != null">
+        guaranteeExperienceProfit,
+      </if>
+      <if test="guaranteeInvestmentExperienceAmount != null">
+        guaranteeInvestmentExperienceAmount,
+      </if>
+      <if test="usedGuaranteeInvestmentExperienceAmount != null">
+        usedGuaranteeInvestmentExperienceAmount,
+      </if>
+      <if test="investmentExperienceAmount != null">
+        investmentExperienceAmount,
+      </if>
+      <if test="usedInvestmentExperienceAmount != null">
+        usedInvestmentExperienceAmount,
+      </if>
+      <if test="investmentExperienceProfit != null">
+        investmentExperienceProfit,
+      </if>
+      <if test="investmentRaiseCount != null">
+        investmentRaiseCount,
+      </if>
+      <if test="usedInvestmentRaiseCount != null">
+        usedInvestmentRaiseCount,
+      </if>
+      <if test="investmentRaiseProfit != null">
+        investmentRaiseProfit,
+      </if>
+      <if test="investmentCashbackAmount != null">
+        investmentCashbackAmount,
+      </if>
+      <if test="usedInvestmentCashbackAmount != null">
+        usedInvestmentCashbackAmount,
+      </if>
+      <if test="guaranteeCashbackAmount != null">
+        guaranteeCashbackAmount,
+      </if>
+      <if test="usedGuaranteeCashbackAmount != null">
+        usedGuaranteeCashbackAmount,
+      </if>
+      <if test="loanCashbackAmount != null">
+        loanCashbackAmount,
+      </if>
+      <if test="usedLoanCashbackAmount != null">
+        usedLoanCashbackAmount,
+      </if>
+      <if test="borrowInterestRateCount != null">
+        borrowInterestRateCount,
+      </if>
+      <if test="usedBorrowInterestRateCount != null">
+        usedBorrowInterestRateCount,
+      </if>
+      <if test="borrowInterestRateProfit != null">
+        borrowInterestRateProfit,
+      </if>
+      <if test="personReceivedRedAmount != null">
+        personReceivedRedAmount,
+      </if>
+      <if test="personSendRedAmount != null">
+        personSendRedAmount,
+      </if>
+      <if test="groupReceivedAmount != null">
+        groupReceivedAmount,
+      </if>
+      <if test="groupSendAmount != null">
+        groupSendAmount,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="withdrawRedAmount != null">
+        #{withdrawRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedWithdrawRedAmount != null">
+        #{usedWithdrawRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeVouchersAmount != null">
+        #{guaranteeVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeVouchersAmount != null">
+        #{usedGuaranteeVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeInvestmentVouchersAmount != null">
+        #{guaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeInvestmentVouchersAmount != null">
+        #{usedGuaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentVouchersAmount != null">
+        #{investmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentVouchersAmount != null">
+        #{usedInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cashRedAmount != null">
+        #{cashRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedCashRedAmount != null">
+        #{usedCashRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeExperienceAmount != null">
+        #{guaranteeExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeExperienceAmount != null">
+        #{usedGuaranteeExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeExperienceProfit != null">
+        #{guaranteeExperienceProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeInvestmentExperienceAmount != null">
+        #{guaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeInvestmentExperienceAmount != null">
+        #{usedGuaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentExperienceAmount != null">
+        #{investmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentExperienceAmount != null">
+        #{usedInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentExperienceProfit != null">
+        #{investmentExperienceProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentRaiseCount != null">
+        #{investmentRaiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="usedInvestmentRaiseCount != null">
+        #{usedInvestmentRaiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="investmentRaiseProfit != null">
+        #{investmentRaiseProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentCashbackAmount != null">
+        #{investmentCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentCashbackAmount != null">
+        #{usedInvestmentCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeCashbackAmount != null">
+        #{guaranteeCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeCashbackAmount != null">
+        #{usedGuaranteeCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="loanCashbackAmount != null">
+        #{loanCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedLoanCashbackAmount != null">
+        #{usedLoanCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="borrowInterestRateCount != null">
+        #{borrowInterestRateCount,jdbcType=INTEGER},
+      </if>
+      <if test="usedBorrowInterestRateCount != null">
+        #{usedBorrowInterestRateCount,jdbcType=INTEGER},
+      </if>
+      <if test="borrowInterestRateProfit != null">
+        #{borrowInterestRateProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="personReceivedRedAmount != null">
+        #{personReceivedRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="personSendRedAmount != null">
+        #{personSendRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="groupReceivedAmount != null">
+        #{groupReceivedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="groupSendAmount != null">
+        #{groupSendAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.backend.business.dao.entity.prize.UserPrizeStatistics">
+    update tab_userprizestatistics
+    <set>
+      <if test="withdrawRedAmount != null">
+        withdrawRedAmount = #{withdrawRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedWithdrawRedAmount != null">
+        usedWithdrawRedAmount = #{usedWithdrawRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeVouchersAmount != null">
+        guaranteeVouchersAmount = #{guaranteeVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeVouchersAmount != null">
+        usedGuaranteeVouchersAmount = #{usedGuaranteeVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeInvestmentVouchersAmount != null">
+        guaranteeInvestmentVouchersAmount = #{guaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeInvestmentVouchersAmount != null">
+        usedGuaranteeInvestmentVouchersAmount = #{usedGuaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentVouchersAmount != null">
+        investmentVouchersAmount = #{investmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentVouchersAmount != null">
+        usedInvestmentVouchersAmount = #{usedInvestmentVouchersAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="cashRedAmount != null">
+        cashRedAmount = #{cashRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedCashRedAmount != null">
+        usedCashRedAmount = #{usedCashRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeExperienceAmount != null">
+        guaranteeExperienceAmount = #{guaranteeExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeExperienceAmount != null">
+        usedGuaranteeExperienceAmount = #{usedGuaranteeExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeExperienceProfit != null">
+        guaranteeExperienceProfit = #{guaranteeExperienceProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeInvestmentExperienceAmount != null">
+        guaranteeInvestmentExperienceAmount = #{guaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeInvestmentExperienceAmount != null">
+        usedGuaranteeInvestmentExperienceAmount = #{usedGuaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentExperienceAmount != null">
+        investmentExperienceAmount = #{investmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentExperienceAmount != null">
+        usedInvestmentExperienceAmount = #{usedInvestmentExperienceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentExperienceProfit != null">
+        investmentExperienceProfit = #{investmentExperienceProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentRaiseCount != null">
+        investmentRaiseCount = #{investmentRaiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="usedInvestmentRaiseCount != null">
+        usedInvestmentRaiseCount = #{usedInvestmentRaiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="investmentRaiseProfit != null">
+        investmentRaiseProfit = #{investmentRaiseProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="investmentCashbackAmount != null">
+        investmentCashbackAmount = #{investmentCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedInvestmentCashbackAmount != null">
+        usedInvestmentCashbackAmount = #{usedInvestmentCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="guaranteeCashbackAmount != null">
+        guaranteeCashbackAmount = #{guaranteeCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedGuaranteeCashbackAmount != null">
+        usedGuaranteeCashbackAmount = #{usedGuaranteeCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="loanCashbackAmount != null">
+        loanCashbackAmount = #{loanCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="usedLoanCashbackAmount != null">
+        usedLoanCashbackAmount = #{usedLoanCashbackAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="borrowInterestRateCount != null">
+        borrowInterestRateCount = #{borrowInterestRateCount,jdbcType=INTEGER},
+      </if>
+      <if test="usedBorrowInterestRateCount != null">
+        usedBorrowInterestRateCount = #{usedBorrowInterestRateCount,jdbcType=INTEGER},
+      </if>
+      <if test="borrowInterestRateProfit != null">
+        borrowInterestRateProfit = #{borrowInterestRateProfit,jdbcType=DECIMAL},
+      </if>
+      <if test="personReceivedRedAmount != null">
+        personReceivedRedAmount = #{personReceivedRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="personSendRedAmount != null">
+        personSendRedAmount = #{personSendRedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="groupReceivedAmount != null">
+        groupReceivedAmount = #{groupReceivedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="groupSendAmount != null">
+        groupSendAmount = #{groupSendAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userId = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.backend.business.dao.entity.prize.UserPrizeStatistics">
+    update tab_userprizestatistics
+    set withdrawRedAmount = #{withdrawRedAmount,jdbcType=DECIMAL},
+      usedWithdrawRedAmount = #{usedWithdrawRedAmount,jdbcType=DECIMAL},
+      guaranteeVouchersAmount = #{guaranteeVouchersAmount,jdbcType=DECIMAL},
+      usedGuaranteeVouchersAmount = #{usedGuaranteeVouchersAmount,jdbcType=DECIMAL},
+      guaranteeInvestmentVouchersAmount = #{guaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      usedGuaranteeInvestmentVouchersAmount = #{usedGuaranteeInvestmentVouchersAmount,jdbcType=DECIMAL},
+      investmentVouchersAmount = #{investmentVouchersAmount,jdbcType=DECIMAL},
+      usedInvestmentVouchersAmount = #{usedInvestmentVouchersAmount,jdbcType=DECIMAL},
+      cashRedAmount = #{cashRedAmount,jdbcType=DECIMAL},
+      usedCashRedAmount = #{usedCashRedAmount,jdbcType=DECIMAL},
+      guaranteeExperienceAmount = #{guaranteeExperienceAmount,jdbcType=DECIMAL},
+      usedGuaranteeExperienceAmount = #{usedGuaranteeExperienceAmount,jdbcType=DECIMAL},
+      guaranteeExperienceProfit = #{guaranteeExperienceProfit,jdbcType=DECIMAL},
+      guaranteeInvestmentExperienceAmount = #{guaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      usedGuaranteeInvestmentExperienceAmount = #{usedGuaranteeInvestmentExperienceAmount,jdbcType=DECIMAL},
+      investmentExperienceAmount = #{investmentExperienceAmount,jdbcType=DECIMAL},
+      usedInvestmentExperienceAmount = #{usedInvestmentExperienceAmount,jdbcType=DECIMAL},
+      investmentExperienceProfit = #{investmentExperienceProfit,jdbcType=DECIMAL},
+      investmentRaiseCount = #{investmentRaiseCount,jdbcType=INTEGER},
+      usedInvestmentRaiseCount = #{usedInvestmentRaiseCount,jdbcType=INTEGER},
+      investmentRaiseProfit = #{investmentRaiseProfit,jdbcType=DECIMAL},
+      investmentCashbackAmount = #{investmentCashbackAmount,jdbcType=DECIMAL},
+      usedInvestmentCashbackAmount = #{usedInvestmentCashbackAmount,jdbcType=DECIMAL},
+      guaranteeCashbackAmount = #{guaranteeCashbackAmount,jdbcType=DECIMAL},
+      usedGuaranteeCashbackAmount = #{usedGuaranteeCashbackAmount,jdbcType=DECIMAL},
+      loanCashbackAmount = #{loanCashbackAmount,jdbcType=DECIMAL},
+      usedLoanCashbackAmount = #{usedLoanCashbackAmount,jdbcType=DECIMAL},
+      borrowInterestRateCount = #{borrowInterestRateCount,jdbcType=INTEGER},
+      usedBorrowInterestRateCount = #{usedBorrowInterestRateCount,jdbcType=INTEGER},
+      borrowInterestRateProfit = #{borrowInterestRateProfit,jdbcType=DECIMAL},
+      personReceivedRedAmount = #{personReceivedRedAmount,jdbcType=DECIMAL},
+      personSendRedAmount = #{personSendRedAmount,jdbcType=DECIMAL},
+      groupReceivedAmount = #{groupReceivedAmount,jdbcType=DECIMAL},
+      groupSendAmount = #{groupSendAmount,jdbcType=DECIMAL},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP}
+    where userId = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>
