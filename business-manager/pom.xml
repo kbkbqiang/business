@@ -7,8 +7,16 @@
     <version>1.0-SNAPSHOT</version>
     <name>business-manager</name>
     <url>http://maven.apache.org</url>
-    <dependencies>
 
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <encoding>UTF-8</encoding>
+    </properties>
+
+    <dependencies>
         <dependency>
             <groupId>com.backend.business</groupId>
             <artifactId>business-web</artifactId>
@@ -16,10 +24,66 @@
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>com.backend.business</groupId>
+            <artifactId>business-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <encoding>${encoding}</encoding>
+                    <delimiters>
+                        <delimiter>@</delimiter>
+                    </delimiters>
+                    <useDefaultDelimiters>false</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-release-plugin</artifactId>-->
+            <!--<version>2.5.3</version>-->
+            <!--<configuration>-->
+            <!--<tagBase>http://192.168.18.14:81/platform-architecture.activity/activity-stage-api/tags</tagBase>-->
+            <!--<useReleaseProfile>false</useReleaseProfile>-->
+            <!--<autoVersionSubmodules>true</autoVersionSubmodules>-->
+            <!--<tagNameFormat>v@{project.version}</tagNameFormat>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
 </project>

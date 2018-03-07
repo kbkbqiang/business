@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.niiwoo.tripod.rabbitmq.configuration.TripodRabbitConfiguration,\
+  com.niiwoo.tripod.rabbitmq.configuration.ConsistencyRabbitConfiguration
