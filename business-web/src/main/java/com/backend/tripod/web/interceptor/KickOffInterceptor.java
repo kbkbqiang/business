@@ -2,8 +2,8 @@ package com.backend.tripod.web.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.backend.business.component.ReloadableMessageSource;
-import com.backend.business.helper.BeanFactoryHelper;
+import com.backend.business.base.component.ReloadableMessageSource;
+import com.backend.business.base.helper.BeanFactoryHelper;
 import com.backend.tripod.web.annotation.AuthIgnore;
 import com.backend.tripod.web.enums.DeviceTypeEnum;
 import com.backend.tripod.web.shiro.KickOffRememberMeManager;

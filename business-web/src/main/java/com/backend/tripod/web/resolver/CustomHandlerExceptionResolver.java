@@ -1,8 +1,8 @@
 package com.backend.tripod.web.resolver;
 
 import com.alibaba.fastjson.JSON;
-import com.backend.business.component.ReloadableMessageSource;
-import com.backend.business.exception.BizException;
+import com.backend.business.base.component.ReloadableMessageSource;
+import com.backend.business.base.exception.BizException;
 import com.backend.tripod.web.vo.Error;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;

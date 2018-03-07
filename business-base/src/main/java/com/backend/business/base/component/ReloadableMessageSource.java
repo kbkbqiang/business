@@ -1,6 +1,6 @@
-package com.backend.business.component;
+package com.backend.business.base.component;
 
-import com.backend.business.helper.SpringResourceHelper;
+import com.backend.business.base.helper.SpringResourceHelper;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
 import java.util.List;

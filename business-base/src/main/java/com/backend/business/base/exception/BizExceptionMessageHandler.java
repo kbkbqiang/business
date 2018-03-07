@@ -1,8 +1,8 @@
-package com.backend.business.exception;
+package com.backend.business.base.exception;
 
 
-import com.backend.business.component.ReloadableMessageSource;
-import com.backend.business.helper.ApplicationContextHelper;
+import com.backend.business.base.component.ReloadableMessageSource;
+import com.backend.business.base.helper.ApplicationContextHelper;
 
 public class BizExceptionMessageHandler {
     private static ReloadableMessageSource messageSource;

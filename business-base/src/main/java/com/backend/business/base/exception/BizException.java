@@ -1,4 +1,4 @@
-package com.backend.business.exception;
+package com.backend.business.base.exception;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

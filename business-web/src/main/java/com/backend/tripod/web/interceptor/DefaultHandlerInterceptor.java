@@ -3,7 +3,7 @@ package com.backend.tripod.web.interceptor;
 import brave.Tracer;
 import brave.Tracing;
 import com.alibaba.fastjson.JSONObject;
-import com.backend.business.context.PrincipalFrameworkContext;
+import com.backend.business.base.context.PrincipalFrameworkContext;
 import com.backend.tripod.web.shiro.UserAuthPrincipal;
 import com.backend.tripod.web.util.RequestUtil;
 import org.apache.shiro.SecurityUtils;

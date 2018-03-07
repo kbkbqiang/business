@@ -2,6 +2,7 @@ package com.backend.business;
 
 import com.backend.business.service.test.ChildBusinessService;
 import com.backend.business.service.test.ChildBusinessService2;
+import com.backend.business.service.userprize.UserPrizeStatisticsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,18 @@ public class TestBusiness {
     @Autowired
     ChildBusinessService2 childBusinessService2;
 
+    @Autowired
+    UserPrizeStatisticsService userPrizeStatisticsService;
+
     @Test
     public void test(){
         childBusinessService.test6();
         childBusinessService2.test6();
+    }
+
+    @Test
+    public void testQueryData(){
+        String userId= "96c9e126-fb28-499f-b6e4-f5ce2ae10782";
+        userPrizeStatisticsService.testQueryData(userId);
     }
 }

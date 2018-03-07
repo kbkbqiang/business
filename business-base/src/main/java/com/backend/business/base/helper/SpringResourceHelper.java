@@ -1,4 +1,4 @@
-package com.backend.business.helper;
+package com.backend.business.base.helper;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.io.FileSystemResource;
