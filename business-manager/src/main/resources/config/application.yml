@@ -1,12 +1,9 @@
 # note: 该配置文件用于与环境无关的公共配置
 spring:
   application:
-    name: "business-impl-service"
+    name: "business-manage"
   profiles:
     active: @build.profile.id@
-
-mybatis:
-  mapper-locations: classpath*:com/backend/business/dao/mapping/*.xml
 
 # log file
 logging:
@@ -18,4 +15,4 @@ logging:
     total-size-cap: 100GB
   stash:
     destination: 192.168.18.105:2013
-    type: "business-log-${spring.profiles.active}"
+    type: "business-manage-log-${spring.profiles.active}"

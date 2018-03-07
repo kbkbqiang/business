@@ -1,4 +1,4 @@
-package com.backend.tripod.service.properties;
+package com.backend.business.properties;
 
 import lombok.Getter;
 import lombok.Setter;

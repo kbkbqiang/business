@@ -1,10 +1,10 @@
-package com.backend.tripod.service.configuration;
+package com.backend.business.configuration;
 
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.backend.tripod.service.properties.ShardingDataSourceProperties;
+import com.backend.business.properties.ShardingDataSourceProperties;
 import com.dangdang.ddframe.rdb.sharding.api.HintManager;
 import com.dangdang.ddframe.rdb.sharding.api.MasterSlaveDataSourceFactory;
 import com.dangdang.ddframe.rdb.sharding.api.rule.ShardingRule;

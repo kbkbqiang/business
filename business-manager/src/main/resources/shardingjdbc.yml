@@ -1,0 +1,4 @@
+
+props:
+  sql.show: "true"
+  metrics.enable: "false"
