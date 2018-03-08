@@ -31,8 +31,5 @@ sharding:
   default-data-source-name: stage
   rule-config-location: classpath:shardingjdbc.yml
 
-#mybatis:
-#  mapper-locations: classpath*:com/backend/business/dao/mapping/**/*.xml
-
 mybatis:
   mapper-locations: classpath*:com/backend/business/dao/mapping/**/*.xml
