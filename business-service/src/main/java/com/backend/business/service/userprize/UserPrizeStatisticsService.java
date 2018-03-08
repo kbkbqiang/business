@@ -22,7 +22,6 @@ public class UserPrizeStatisticsService {
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-    @Transactional
     public void testQueryData(String userId){
         UserPrizeStatistics userPrizeStatistics = userPrizeStatisticsMapper.selectByPrimaryKey(userId);
         System.out.println(JSON.toJSONString(userPrizeStatistics));
