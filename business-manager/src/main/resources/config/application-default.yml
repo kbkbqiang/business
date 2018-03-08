@@ -10,6 +10,22 @@ server:
       pattern: "%h %l %u %{time,[dd/MMM/yyyy:HH:mm:ss.SSS Z]} \"%r\" %s %b \"%{i,Referer}\" \"%{i,User-Agent}\""
       dir: "/var/business/access-logs/manage"
 
+spring:
+  redis:
+    host: 192.168.18.103
+    port: 6379
+    password: ace@redis99
+    database: 9
+    timeout: 10000
+    pool:
+      max-active: 10
+      max-idle: 5
+      min-idle: 2
+      max-wait: 2000
+  http:
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
 
 sharding:
   data-sources:
@@ -33,3 +49,17 @@ sharding:
 
 mybatis:
   mapper-locations: classpath*:com/backend/business/dao/mapping/**/*.xml
+
+shiro:
+  enabled: true
+  render-page-mode: false
+  session:
+    prefix: "businesssid:"
+    time-out-hours: 2
+  hashed-credential:
+    hash-algorith-name: md5
+    hash-iterations: 3
+  cache:
+    authorization-caching-enabled: true
+    authenticationCachePrefix: "shield-web-ac:" #shield-web.shiro-authentication
+    authorizationCachePrefix: "shield-web-az:"  #shield-web.shiro-authorization
