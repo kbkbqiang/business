@@ -19,7 +19,7 @@ public class DefaultMessageCompensateProcessor implements MessageCompensateProce
     public DefaultMessageCompensateProcessor(CuratorFramework curatorFramework, ConsistencyRabbitTemplate rabbitTemplate, ConsistentMessageHandler consistentMessageHandler) {
         this.rabbitTemplate = rabbitTemplate;
         this.consistentMessageHandler = consistentMessageHandler;
-        this.lock = new InterProcessMutex(curatorFramework, "/niiwoo/mq-compensate-lock/" + consistentMessageHandler.getNameSpace());
+        this.lock = new InterProcessMutex(curatorFramework, "/business/mq-compensate-lock/" + consistentMessageHandler.getNameSpace());
     }
 
     @Override

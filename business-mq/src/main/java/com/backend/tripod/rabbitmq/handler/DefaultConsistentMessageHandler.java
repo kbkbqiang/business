@@ -2,7 +2,7 @@ package com.backend.tripod.rabbitmq.handler;
 
 import com.backend.tripod.rabbitmq.entity.RabbitMessage;
 import com.backend.tripod.rabbitmq.enums.MessageStatus;
-import com.backend.business.properties.ShardingDataSourceProperties;
+import com.backend.tripod.sharding.properties.ShardingDataSourceProperties;
 import com.dangdang.ddframe.rdb.sharding.api.HintManager;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;

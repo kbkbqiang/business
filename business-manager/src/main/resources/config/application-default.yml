@@ -22,6 +22,19 @@ spring:
       max-idle: 5
       min-idle: 2
       max-wait: 2000
+  rabbitmq:
+    host: 192.168.18.108
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 1
+        max-concurrency: 1
+    template:
+      mandatory: true
+    publisher-confirms: true
   http:
     multipart:
       max-file-size: 3MB

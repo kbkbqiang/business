@@ -5,7 +5,7 @@ import com.backend.tripod.rabbitmq.handler.ConsistentMessageHandler;
 import com.backend.tripod.rabbitmq.handler.DefaultConsistentMessageHandler;
 import com.backend.tripod.rabbitmq.handler.DefaultMessageCompensateProcessor;
 import com.backend.tripod.rabbitmq.handler.MessageCompensateProcessor;
-import com.backend.business.properties.ShardingDataSourceProperties;
+import com.backend.tripod.sharding.properties.ShardingDataSourceProperties;
 import org.apache.curator.framework.CuratorFramework;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

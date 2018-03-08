@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.backend.tripod.sharding.configuration.ShardingDataSourceConfiguration

@@ -5,7 +5,7 @@
     <artifactId>business-web</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>business-web</name>
+    <name>business-web ::::::我是基础包，可提取出单独项目</name>
     <url>http://maven.apache.org</url>
 
     <parent>
