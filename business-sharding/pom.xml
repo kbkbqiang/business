@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.backend.business</groupId>
-    <artifactId>business-service</artifactId>
+    <groupId>com.backend.tripod.sharding</groupId>
+    <artifactId>business-sharding</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>business-service</name>
+    <name>business-sharding</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -20,12 +20,6 @@
             <artifactId>business-base</artifactId>
             <version>${project.base.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.backend.tripod.sharding</groupId>
-            <artifactId>business-sharding</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- 数据库包 -->
         <dependency>
             <groupId>mysql</groupId>
@@ -47,40 +41,9 @@
             <artifactId>sharding-jdbc-config-yaml</artifactId>
             <version>1.5.4.1</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-            <version>2.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-recipes</artifactId>
-            <version>2.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.101tec</groupId>
-            <artifactId>zkclient</artifactId>
-            <version>0.10</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>business-service</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -123,17 +86,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-release-plugin</artifactId>-->
-            <!--<version>2.5.3</version>-->
-            <!--<configuration>-->
-            <!--<tagBase>http://192.168.18.14:81/platform-architecture.activity/activity-stage-api/tags</tagBase>-->
-            <!--<useReleaseProfile>false</useReleaseProfile>-->
-            <!--<autoVersionSubmodules>true</autoVersionSubmodules>-->
-            <!--<tagNameFormat>v@{project.version}</tagNameFormat>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>

@@ -1,4 +1,4 @@
-package com.backend.business.properties;
+package com.backend.tripod.sharding.properties;
 
 import lombok.Getter;
 import lombok.Setter;
