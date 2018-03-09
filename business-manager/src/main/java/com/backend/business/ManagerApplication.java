@@ -10,7 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2018/3/7
  */
 @SpringBootApplication
-@MapperScan(basePackages = {"com.backend.business.dao.mapper","com.backend.business.service"})
+@MapperScan(basePackages = {
+        "com.backend.business.dao.mapper",
+        "com.backend.business.service"})
 public class ManagerApplication {
 
     public static void main(String[] args) {

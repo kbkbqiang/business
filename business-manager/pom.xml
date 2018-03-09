@@ -204,7 +204,7 @@
                             <daemons>
                                 <daemon>
                                     <id>${artifactId}</id>
-                                    <mainClass>com.niiwoo.activity.stage.StageApplication</mainClass>
+                                    <mainClass>com.backend.business.ManagerApplication</mainClass>
                                     <platforms>
                                         <platform>jsw</platform>
                                     </platforms>
