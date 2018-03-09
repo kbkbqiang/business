@@ -1,7 +1,7 @@
 # note: 该配置文件仅用于开发环境
 server:
   context-path: /business-manager
-  port: 8070
+  port: 80
   undertow:
     io-threads: 2
     worker-threads: 5

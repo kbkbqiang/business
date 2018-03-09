@@ -13,6 +13,7 @@ logging:
     max-file-size: 200MB
     max-history: 500
     total-size-cap: 100GB
-  stash:
-    destination: 192.168.18.105:2013
-    type: "business-manage-log-${spring.profiles.active}"
+#  stash:
+#    destination: 192.168.18.105:2013
+#    type: "activity-log-${spring.profiles.active}"
+

@@ -1,0 +1,61 @@
+<configuration>
+    <include resource="logback-tripod.xml"/>
+
+    <springProfile name="default">
+        <root level="DEBUG" additivity="false">
+            <appender-ref ref="console"/>
+            <appender-ref ref="info-file"/>
+            <appender-ref ref="warn-file"/>
+            <appender-ref ref="error-file"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="dev-online">
+        <root level="DEBUG" additivity="false">
+            <appender-ref ref="info-file"/>
+            <appender-ref ref="warn-file"/>
+            <appender-ref ref="error-file"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="test, experience, production">
+        <logger name="Sharding-JDBC-SQL" level="OFF"/>
+        <appender name="stash" class="com.backend.business.base.logstash.CustomLogstashTcpSocketAppender">
+            <destination>${STASH_DESTINATION}</destination>
+            <keepAliveDuration>5 minutes</keepAliveDuration>
+            <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+                <level>INFO</level>
+            </filter>
+            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                <providers>
+                    <provider class="com.backend.business.base.logstash.TraceEventPatternJsonProvider"/>
+                    <provider class="com.backend.business.base.logstash.StashLoggingEventPatternJsonProvider">
+                        <pattern>
+                            {
+                            "app": "%app",
+                            "type": "${STASH_TYPE}",
+                            "pid":"${PID}",
+                            "path": "${LOG_PATH}",
+                            "level": "%-5p",
+                            "class": "%C",
+                            "method": "%method",
+                            "line": "%L",
+                            "time": "%d{yyyy-MM-dd HH:mm:ss.SSS}",
+                            "message": "%m",
+                            "traceId": "%traceId",
+                            "userId": "%userId",
+                            "sessionId": "%sessionId"
+                            }
+                        </pattern>
+                    </provider>
+                </providers>
+            </encoder>
+        </appender>
+        <root level="INFO" additivity="false">
+            <appender-ref ref="info-file"/>
+            <appender-ref ref="warn-file"/>
+            <appender-ref ref="error-file"/>
+            <appender-ref ref="stash"/>
+        </root>
+    </springProfile>
+</configuration>
