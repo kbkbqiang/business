@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @Description
@@ -28,16 +29,22 @@ public class TestController {
     @ApiOperation("下载Excel模板")
     public Result downloadTemplate(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> dataMap = new HashMap<>();
-        for(int i=0;i < 1000000; i++) {
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-            log.info("测试相关接口=================");
-        }
+        CompletableFuture.runAsync(new Runnable() {
+            @Override
+            public void run() {
+                for(int i=0;i < 1000000; i++) {
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                    log.info("测试相关接口=================");
+                }
+            }
+        });
+
         dataMap.put("downloadPath", "/templates/userPrizeTemplate.xlsx");
         return Result.with(dataMap);
     }
