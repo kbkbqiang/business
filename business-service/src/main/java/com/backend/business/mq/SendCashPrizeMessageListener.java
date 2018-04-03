@@ -1,6 +1,5 @@
 package com.backend.business.mq;
 
-import com.alibaba.fastjson.JSON;
 import com.backend.business.constant.BusinessRabbitConstant;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ import java.io.IOException;
  * @Author zq
  * @Date 2017/12/5
  */
-@Component
+//@Component
 public class SendCashPrizeMessageListener {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SendCashPrizeMessageListener.class);
