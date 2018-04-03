@@ -12,9 +12,9 @@ server:
 
 spring:
   redis:
-    host: 192.168.18.103
+    host: 127.0.0.1
     port: 6379
-    password: ace@redis99
+    password: abc@@123456
     database: 9
     timeout: 10000
     pool:
@@ -22,19 +22,19 @@ spring:
       max-idle: 5
       min-idle: 2
       max-wait: 2000
-  rabbitmq:
-    host: 192.168.18.108
-    port: 5672
-    username: guest
-    password: guest
-    listener:
-      simple:
-        acknowledge-mode: manual
-        concurrency: 1
-        max-concurrency: 1
-    template:
-      mandatory: true
-    publisher-confirms: true
+#  rabbitmq:
+#    host: 192.168.18.108
+#    port: 5672
+#    username: guest
+#    password: guest
+#    listener:
+#      simple:
+#        acknowledge-mode: manual
+#        concurrency: 1
+#        max-concurrency: 1
+#    template:
+#      mandatory: true
+#    publisher-confirms: true
   http:
     multipart:
       max-file-size: 3MB
@@ -45,18 +45,18 @@ sharding:
     stage:
       master:
         driver-class-name: com.mysql.jdbc.Driver
-        url: "jdbc:mysql://192.168.18.107:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
-        username: niiwoowrite
-        password: niiwoo@write@123
-      slaves:
-        - driver-class-name: com.mysql.jdbc.Driver
-          url: "jdbc:mysql://192.168.18.108:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
-          username: niiwooread
-          password: niiwoo@read@123
-        - driver-class-name: com.mysql.jdbc.Driver
-          url: "jdbc:mysql://192.168.18.108:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
-          username: niiwooread
-          password: niiwoo@read@123
+        url: "jdbc:mysql://192.168.18.107:3388/bussiness?useUnicode=true&characterEncoding=utf-8&useSSL=false"
+        username: businesswrite
+        password: business@write@123
+#      slaves:
+#        - driver-class-name: com.mysql.jdbc.Driver
+#          url: "jdbc:mysql://192.168.18.108:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
+#          username: niiwooread
+#          password: niiwoo@read@123
+#        - driver-class-name: com.mysql.jdbc.Driver
+#          url: "jdbc:mysql://192.168.18.108:3388/activity_stage?useUnicode=true&characterEncoding=utf-8&useSSL=false"
+#          username: niiwooread
+#          password: niiwoo@read@123
   default-data-source-name: stage
   rule-config-location: classpath:shardingjdbc.yml
 
