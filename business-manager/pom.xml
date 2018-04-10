@@ -49,6 +49,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <encoding>UTF-8</encoding>
+        <dom4j.version>1.6.1</dom4j.version>
+        <xstream.version>1.4.10</xstream.version>
     </properties>
 
     <dependencies>
@@ -62,6 +64,18 @@
             <groupId>com.backend.business</groupId>
             <artifactId>business-service</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- xml解析 -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>${xstream.version}</version>
         </dependency>
     </dependencies>
 

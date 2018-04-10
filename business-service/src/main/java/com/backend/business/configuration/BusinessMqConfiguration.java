@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * 所有mq定义配置
  *
  */
-@Configuration
+//@Configuration
 public class BusinessMqConfiguration {
 
 
