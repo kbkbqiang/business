@@ -1,9 +1,9 @@
 package com.backend.business.service.weixin;
 
-import org.insane.model.weixin.response.Article;
-import org.insane.model.weixin.response.RespNewsMessage;
-import org.insane.model.weixin.response.RespTextMessage;
-import org.insane.utils.weixin.MessageUtil;
+import com.backend.business.utils.weixin.MessageUtil;
+import com.backend.business.vo.weixin.response.Article;
+import com.backend.business.vo.weixin.response.RespNewsMessage;
+import com.backend.business.vo.weixin.response.RespTextMessage;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
